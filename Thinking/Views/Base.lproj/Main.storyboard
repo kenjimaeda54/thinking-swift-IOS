@@ -11,17 +11,13 @@
         <!--Quotes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Thinking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QuotesViewController" customModule="Thinking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="udD-BK-x0V">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="udD-BK-x0V">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Woy-hY-oJa">
-                                <rect key="frame" x="0.0" y="322" width="414" height="252"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8u-zf-IAJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="788"/>
@@ -37,7 +33,7 @@
                                     <constraint firstAttribute="width" secondItem="Wgt-tC-9dE" secondAttribute="height" multiplier="750:666" id="hpy-4S-iid"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="8JO-AU-O5b">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="8JO-AU-O5b">
                                 <rect key="frame" x="20" y="426.5" width="374" height="55"/>
                                 <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="46"/>
                                 <nil key="textColor"/>
@@ -73,6 +69,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Quotes" image="quotes" id="fhB-MB-R60"/>
+                    <connections>
+                        <outlet property="imgBg" destination="udD-BK-x0V" id="Bf7-PL-Bdt"/>
+                        <outlet property="imgPhoto" destination="Wgt-tC-9dE" id="da1-Rl-69i"/>
+                        <outlet property="labAuthor" destination="8TK-cQ-Hha" id="Wh2-fF-OZY"/>
+                        <outlet property="labQuotes" destination="8JO-AU-O5b" id="Ith-YL-LGi"/>
+                        <outlet property="nsTopConstraint" destination="NI5-W1-lLw" id="ivm-r0-sma"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,20 +84,23 @@
         <!--Settings-->
         <scene sceneID="eSl-MV-a3p">
             <objects>
-                <viewController id="ohu-Er-bab" sceneMemberID="viewController">
+                <viewController id="ohu-Er-bab" customClass="SettingsViewController" customModule="Thinking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tJQ-Ak-ACA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change automatically" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcj-0g-mg4">
-                                <rect key="frame" x="122.5" y="44" width="169" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change automatically" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcj-0g-mg4">
+                                <rect key="frame" x="122.5" y="44" width="169.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NYr-GA-wxd">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NYr-GA-wxd">
                                 <rect key="frame" x="182.5" y="74.5" width="51" height="31"/>
                                 <color key="onTintColor" red="0.75294117650000003" green="0.37647058820000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeAutomatic:" destination="ohu-Er-bab" eventType="valueChanged" id="EPB-sD-Sbk"/>
+                                </connections>
                             </switch>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTt-md-yWe">
                                 <rect key="frame" x="0.0" y="135.5" width="414" height="1"/>
@@ -112,6 +118,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="5" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="fi7-ke-RDW">
                                 <rect key="frame" x="42" y="210.5" width="319" height="31"/>
                                 <color key="minimumTrackTintColor" red="0.75294117650000003" green="0.37647058820000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sliderSeconds:" destination="ohu-Er-bab" eventType="valueChanged" id="IEX-vU-Xvs"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPj-9C-Zxz">
                                 <rect key="frame" x="10" y="215" width="10" height="20.5"/>
@@ -145,6 +154,9 @@
                                     <segment title="Black"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" red="0.75294117650000003" green="0.37647058820000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeSegment:" destination="ohu-Er-bab" eventType="valueChanged" id="CE5-zc-ei0"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Obs: to change thoughts just tap the screen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sf-IW-JG0">
                                 <rect key="frame" x="24" y="727.5" width="366" height="59.5"/>
@@ -187,6 +199,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="Xce-D8-9tF"/>
+                    <connections>
+                        <outlet property="labTitleSlider" destination="y9m-18-B2K" id="ssi-kv-WUw"/>
+                        <outlet property="segmeColor" destination="m8h-rF-Sdx" id="RKk-iD-uUP"/>
+                        <outlet property="sliderInterval" destination="fi7-ke-RDW" id="mdW-9r-y2d"/>
+                        <outlet property="swChangeAutomatic" destination="NYr-GA-wxd" id="gKd-pf-JW3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4zO-rW-nbL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -198,6 +216,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="20C-G0-Ng3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nm4-Lg-jjW">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.75294117650000003" green="0.37647058820000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
